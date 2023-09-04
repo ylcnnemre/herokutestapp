@@ -8,7 +8,7 @@ app.get("/", async (req, res) => {
 
     let data = await getTitle()
     res.send({
-        msg: "selam ",
+        msg: "selama ",
         result: data
     })
 })
