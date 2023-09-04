@@ -3,7 +3,9 @@ const chrome = require('selenium-webdriver/chrome');
 
 // ChromeDriver'ı başlatın
 const options = new chrome.Options();
-
+options.addArguments('--headless');
+options.addArguments("--disable-gpu");
+options.addArguments("--no-sandbox");
 const driver = new Builder().forBrowser('chrome').setChromeOptions(options).build();
 
 // Web sayfasını açın
@@ -24,7 +26,7 @@ const getTitle = async () => {
         return "bir hata var siteye ulaşılamıyor"
     }
 }
-
+getTitle()
 module.exports = {
     getTitle
 }
